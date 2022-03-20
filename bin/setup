@@ -1,0 +1,13 @@
+#!/bin/bash
+
+   file="/usr/bin/doesrobot"
+if [ ! -f "$file" ]
+then
+    sudo cp doesrobot /usr/bin
+    echo "doesrobot installed"
+else
+    sudo rm /usr/bin/doesrobot
+    sudo cp doesrobot /usr/bin
+    echo "doesrobot updated"
+fi
+

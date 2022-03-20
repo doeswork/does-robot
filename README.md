@@ -1,3 +1,12 @@
 does-robot is a framework for making robots
 
-mark + jeff rosenberg
+by mark + jeff rosenberg
+
+Requirements
+
+ubuntu desktop
+
+Installation 
+
+- `git clone`
+- `bin/setup` 

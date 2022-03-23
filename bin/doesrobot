@@ -1,5 +1,7 @@
 #!/bin/bash
 
 mkdir "$1"
+mkdir "$1/freecad"
+touch "$1/freecad.py"
 
 echo "$1 is alive!"

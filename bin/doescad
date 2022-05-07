@@ -1,4 +1,11 @@
 #!/bin/bash
 
-cd freecad
-freecad
+yourfilenames=`ls freecad/*.FCStd`
+all_cad_files=""
+
+for eachfile in $yourfilenames
+do
+  all_cad_files+="$eachfile "
+done
+
+eval "freecad $all_cad_files"

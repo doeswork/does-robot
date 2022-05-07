@@ -3,7 +3,7 @@ if [ "$1" == "--help" ]
 then
   echo "commands"
   echo "make a project: doesrobot robot-name" 
-  echo "open freecad: doescad"
+  echo "open freecad files: doescad"
 else
   mkdir "$1"
   mkdir "$1/freecad"

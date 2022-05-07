@@ -1,7 +1,13 @@
 #!/bin/bash
+if [ "$1" == "--help" ]
+then
+  echo "commands"
+  echo "make a project: doesrobot robot-name" 
+  echo "open freecad: doescad"
+else
+  mkdir "$1"
+  mkdir "$1/freecad"
+  touch "$1/freecad.py"
 
-mkdir "$1"
-mkdir "$1/freecad"
-touch "$1/freecad.py"
-
-echo "$1 is alive!"
+  echo "$1 is alive!"
+fi

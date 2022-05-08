@@ -4,7 +4,9 @@ by mark + jeff rosenberg
 
 Requirements
 
-ubuntu desktop
+- ubuntu desktop
+- freecad v 0.19 or higher
+ - assembly 4
 
 Installation 
 

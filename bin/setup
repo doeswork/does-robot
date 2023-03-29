@@ -3,14 +3,13 @@
    file="/usr/bin/doesrobot"
 if [ ! -f "$file" ]
 then
-    sudo cp bin/doesrobot /usr/bin
-    sudo cp bin/doescad /usr/bin
+    sudo cp bin/bash_commands/doesrobot /usr/bin
+    sudo cp bin/bash_commands/doescad /usr/bin
     echo "doesrobot installed"
 else
     sudo rm /usr/bin/doesrobot
     sudo rm /usr/bin/doescad
-    sudo cp bin/doesrobot /usr/bin
-    sudo cp bin/doescad /usr/bin
+    sudo cp bin/bash_commands/doesrobot /usr/bin
+    sudo cp bin/bash_commands/doescad /usr/bin
     echo "doesrobot updated"
 fi
-

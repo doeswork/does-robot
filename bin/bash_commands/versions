@@ -1,0 +1,3 @@
+# gets the last 3 commit SHA_1 of a file
+
+git log --format=%h -n 3 -- follow <file_name>

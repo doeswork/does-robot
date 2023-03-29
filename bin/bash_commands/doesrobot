@@ -1,8 +1,10 @@
+#new
+
 #!/bin/bash
 if [ "$1" == "--help" ]
 then
   echo "commands"
-  echo "make a project: doesrobot robot-name" 
+  echo "make a project: doesrobot robot-name"
   echo "open freecad files: doescad"
 else
   mkdir "$1"
@@ -11,3 +13,18 @@ else
 
   echo "$1 is alive!"
 fi
+
+
+# versions <number> <filename>
+# get the last <number> versions of a given <filename>
+
+versions = git log --format=%h -n <number> -- follow <file_name>
+
+mv <filename> "current${<filename>}"
+count = 1
+
+versions.each do |version|
+  git checkout version <file_name>
+  mv <file_name> "${count}-prior-${filename}"
+  count += 1
+end

@@ -18,6 +18,7 @@ fi
 # versions <number> <filename>
 # get the last <number> versions of a given <filename>
 
+git log --format=%h -n 4 -- follow README.md
 versions = git log --format=%h -n <number> -- follow <file_name>
 
 mv <filename> "current${<filename>}"

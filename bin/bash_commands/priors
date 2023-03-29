@@ -1,0 +1,31 @@
+# gets the last 3 commit SHA_1 of a file
+# VERSONS= "$(git log --format=%h -n 3 -- follow README.md)"
+# echo 'mickey'
+# echo "$(git log --format=%h -n 3 -- follow README.md)"
+
+# echo "$(git log --oneline)"
+
+# mylog=$(git log --oneline)
+
+ # echo $mylog
+# readarray -t commits < <(git log --format=%h -n 4 --follow README.md)
+filename="README.md"
+number="4"
+count=0
+mapfile -t commits < <(git log --follow -n "${number}" --format="%h" "${filename}")
+array_length=${#commits[@]}
+
+cp "$filename" "current_${filename}"
+
+for item in "${commits[@]}"
+do
+    (( count++ ))
+    git checkout "$item" "$filename"
+    echo $item
+    if [ $count == $array_length ]
+    then
+      cp "$filename" "prior_${count}_${filename}"
+    else
+      mv "$filename" "prior_${count}_${filename}"
+    fi
+done

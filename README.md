@@ -1,11 +1,12 @@
-does-robot is a framework for a robotics project
+does-robot is a framework for making robots
+
+by mark + jeff rosenberg
 
 Requirements
 
-- bash
-- git
+ubuntu desktop
 
-Installation
+Installation 
 
 - `git clone`
-- `bin/setup`
+- `bin/setup` 

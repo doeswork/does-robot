@@ -9,8 +9,8 @@
 
  # echo $mylog
 # readarray -t commits < <(git log --format=%h -n 4 --follow README.md)
-filename="README.md"
-number="4"
+filename=$1
+number=$2
 count=0
 mapfile -t commits < <(git log --follow -n "${number}" --format="%h" "${filename}")
 array_length=${#commits[@]}

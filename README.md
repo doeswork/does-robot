@@ -14,7 +14,7 @@ A bash terminal
 
 ### Features
 
-##### Priors
+#### Priors
 
 Get the prior `n` number of versions of a given file back in your repo
 

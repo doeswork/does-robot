@@ -20,7 +20,7 @@ Get the prior `n` number of versions of a given file back in your repo
 
 e.g.
 
-`prior 3 parts/arm.stl`
+```prior 3 parts/arm.stl```
 
 would produce the following files in your robot repo
 

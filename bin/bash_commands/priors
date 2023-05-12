@@ -13,8 +13,9 @@ filepath=$1
 number=$2
 count=0
 filename=$(basename "$filepath")
+gitnumber=$((number + 1))
 
-mapfile -t commits < <(git log --follow -n "${number}" --format="%h" "${filepath}")
+mapfile -t commits < <(git log --follow -n "${gitnumber}" --format="%h" "${filepath}")
 array_length=${#commits[@]}
 
 current_filename="current_${filename}"
@@ -25,11 +26,12 @@ for item in "${commits[@]}"
 do
     (( count++ ))
     git checkout "$item" "$filepath"
-    echo $item
-    if [ $count == $array_length ]
-    then
-      cp "$filepath" "prior_${count}_${filename}"
-    else
-      mv "$filepath" "prior_${count}_${filename}"
+    bettercount=$((count - 1))
+    if [ "$count" -ne 1 ]; then
+      if [ $count == $array_length ]; then
+        cp "$filepath" "prior_${bettercount}_${filename}"
+      else
+        mv "$filepath" "prior_${bettercount}_${filename}"
+      fi
     fi
 done

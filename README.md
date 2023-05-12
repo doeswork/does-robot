@@ -2,17 +2,17 @@ does-robot is a framework for making robots
 
 by mark + jeff rosenberg
 
-#### Requirements
+### Requirements
 
 A bash terminal
 
-#### Installation
+### Installation
 
 - `git clone git@github.com:doeswork/does-robot.git`
 - `cd does-robot`
 - `bin/setup`
 
-#### Features
+### Features
 
 ##### Priors
 

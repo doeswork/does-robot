@@ -9,23 +9,27 @@
 
  # echo $mylog
 # readarray -t commits < <(git log --format=%h -n 4 --follow README.md)
-filename=$1
+filepath=$1
 number=$2
 count=0
-mapfile -t commits < <(git log --follow -n "${number}" --format="%h" "${filename}")
+filename=$(basename "$filepath")
+
+mapfile -t commits < <(git log --follow -n "${number}" --format="%h" "${filepath}")
 array_length=${#commits[@]}
 
-cp "$filename" "current_${filename}"
+current_filename="current_${filename}"
+
+cp "$filepath" "$current_filename"
 
 for item in "${commits[@]}"
 do
     (( count++ ))
-    git checkout "$item" "$filename"
+    git checkout "$item" "$filepath"
     echo $item
     if [ $count == $array_length ]
     then
-      cp "$filename" "prior_${count}_${filename}"
+      cp "$filepath" "prior_${count}_${filename}"
     else
-      mv "$filename" "prior_${count}_${filename}"
+      mv "$filepath" "prior_${count}_${filename}"
     fi
 done

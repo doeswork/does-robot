@@ -22,7 +22,7 @@ e.g.
 
 ```prior 3 parts/arm.stl```
 
-would produce the following files in your robot repo
+would produce the following files:
 
 `current_arm.stl`
 `prior_1_arm.stl`

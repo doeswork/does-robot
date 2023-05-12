@@ -11,6 +11,7 @@ A bash terminal
 - `git clone git@github.com:doeswork/does-robot.git`
 - `cd does-robot`
 - `bin/setup`
+  - if you move where your `does-robot` folder lives you'll have to `bin/setup` again
 
 ### Features
 

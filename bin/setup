@@ -1,15 +1,18 @@
 #!/bin/bash
 
-   file="/usr/bin/doesrobot"
-if [ ! -f "$file" ]
-then
-    sudo cp bin/bash_commands/doesrobot /usr/bin
-    sudo cp bin/bash_commands/doescad /usr/bin
-    echo "doesrobot installed"
-else
-    sudo rm /usr/bin/doesrobot
-    sudo rm /usr/bin/doescad
-    sudo cp bin/bash_commands/doesrobot /usr/bin
-    sudo cp bin/bash_commands/doescad /usr/bin
-    echo "doesrobot updated"
-fi
+current_dir=$(pwd)
+line="export PATH=\"${current_dir}/bin/bash_commands:\$PATH\""
+grep -qF "$line" ~/.bashrc || echo "$line" >> ~/.bashrc
+source ~/.bashrc
+# if [ ! -f "$file" ] #
+# then
+#     sudo cp bin/bash_commands/doesrobot /usr/bin
+#     sudo cp bin/bash_commands/doescad /usr/bin
+#     echo "doesrobot installed"
+# else
+#     sudo rm /usr/bin/doesrobot
+#     sudo rm /usr/bin/doescad
+#     sudo cp bin/bash_commands/doesrobot /usr/bin
+#     sudo cp bin/bash_commands/doescad /usr/bin
+#     echo "doesrobot updated"
+# fi

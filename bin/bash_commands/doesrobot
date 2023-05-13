@@ -8,8 +8,7 @@ then
   echo "open freecad files: doescad"
 else
   mkdir "$1"
-  mkdir "$1/freecad"
-  touch "$1/freecad.py"
+  mkdir "$1/parts"
 
   echo "$1 is alive!"
 fi

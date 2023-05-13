@@ -15,17 +15,17 @@ A bash terminal
 
 ### Features
 
-#### Priors
+#### Previous
 
-Get the prior `n` number of versions of a given file back in your repo
+Get the previous `n` number of versions of a given file back in your repo
 
 e.g.
 
-```prior 3 parts/arm.stl```
+```previous parts/arm.stl 3```
 
 would produce the following files:
 
 `current_arm.stl`
-`prior_1_arm.stl`
-`prior_2_arm.stl`
-`prior_3_arm.stl`
+`previous_1_arm.stl`
+`previous_2_arm.stl`
+`previous_3_arm.stl`

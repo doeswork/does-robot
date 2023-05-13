@@ -9,8 +9,8 @@
 
  # echo $mylog
 # readarray -t commits < <(git log --format=%h -n 4 --follow README.md)
-number=$1
-filepath=$2
+number=$2
+filepath=$1
 count=0
 filename=$(basename "$filepath")
 gitnumber=$((number + 1))
@@ -29,9 +29,9 @@ do
     bettercount=$((count - 1))
     if [ "$count" -ne 1 ]; then
       if [ $count == $array_length ]; then
-        cp "$filepath" "prior_${bettercount}_${filename}"
+        cp "$filepath" "previous_${bettercount}_${filename}"
       else
-        mv "$filepath" "prior_${bettercount}_${filename}"
+        mv "$filepath" "previous_${bettercount}_${filename}"
       fi
     fi
 done

@@ -1,11 +1,19 @@
-#!/bin/bash
 
-# `yourfilenames=`ls freecad/*.FCStd`
-# all_cad_files=""
+# for linux desktop
+# if [[ $(uname) == "Linux" ]]; then
+#   `yourfilenames=`ls freecad/*.FCStd`
+#   all_cad_files=""
 
-# for eachfile in $yourfilenames
-# do
-#  all_cad_files+="$eachfile "
-# done
+#   for eachfile in $yourfilenames
+#   do
+#   all_cad_files+="$eachfile "
+#   done
+#   eval "freecad $all_cad_files"
+# fi
 
-# eval "freecad $all_cad_files"
+
+# for mac
+if [[ $(uname) == "Darwin" ]]; then
+  echo 'opening freecad ...'
+  open -a freecad "$1"
+fi

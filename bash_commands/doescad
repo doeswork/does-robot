@@ -17,3 +17,15 @@ if [[ $(uname) == "Darwin" ]]; then
   echo 'opening freecad ...'
   open -a freecad "$1"
 fi
+
+# for wsl 
+
+if [[ $(uname) == "Linux" ]]; then
+  if [[ $WSL_DISTRO_NAME == *"Ubuntu"* ]]; then
+    # '/mnt/c/Program Files/FreeCAD 0.20/bin/FreeCAD.exe'
+    for file in "$@"; do
+      # Run FreeCAD script with the file as an argument
+      "/mnt/c/Program Files/FreeCAD 0.20/bin/FreeCAD.exe" "$file"
+    done
+  fi
+fi

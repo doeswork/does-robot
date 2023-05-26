@@ -1,14 +1,3 @@
-# gets the last 3 commit SHA_1 of a file
-# VERSONS= "$(git log --format=%h -n 3 -- follow README.md)"
-# echo 'mickey'
-# echo "$(git log --format=%h -n 3 -- follow README.md)"
-
-# echo "$(git log --oneline)"
-
-# mylog=$(git log --oneline)
-
- # echo $mylog
-# readarray -t commits < <(git log --format=%h -n 4 --follow README.md)
 number=$2
 filepath=$1
 count=0

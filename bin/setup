@@ -1,6 +1,22 @@
 #!/bin/bash
 
-current_dir=$(pwd)
-line="export PATH=\"${current_dir}/bash_commands:\$PATH\""
-grep -qF "$line" ~/.bashrc || echo "$line" >> ~/.bashrc
-source ~/.bashrc
+# for mac
+if [[ $(uname) == "Darwin" ]]; then
+    current_dir=$(pwd)
+    line="export PATH=\"${current_dir}/bash_commands:\$PATH\""
+    grep -qF "$line" ~/.bashrc || echo "$line" >> ~/.bashrc
+    source ~/.bashrc
+    echo "does-robot installed"
+fi
+
+# for wsl 
+
+if [[ $(uname) == "Linux" ]]; then
+  if [[ $WSL_DISTRO_NAME == *"Ubuntu"* ]]; then
+    current_dir=$(pwd)
+    line="export PATH=\"${current_dir}/bash_commands:\$PATH\""
+    sudo grep -qF "$line" /etc/bash.bashrc || echo "$line" >> /etc/bash.bashrc
+    source /etc/bash.bashrc
+    echo "does-robot installed"
+  fi
+fi

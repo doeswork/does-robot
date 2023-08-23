@@ -13,10 +13,18 @@ fi
 
 if [[ $(uname) == "Linux" ]]; then
   if [[ $WSL_DISTRO_NAME == *"Ubuntu"* ]]; then
-    current_dir=$(pwd)
-    line="export PATH=\"${current_dir}/bash_commands:\$PATH\""
-    sudo grep -qF "$line" /etc/bash.bashrc || echo "$line" >> /etc/bash.bashrc
-    source /etc/bash.bashrc
-    echo "does-robot installed"
+  current_dir=$(pwd)
+
+# Define the line to add to /etc/bash.bashrc
+line="export PATH=\"${current_dir}/bash_commands:\$PATH\""
+
+# Check if the line already exists in /etc/bash.bashrc
+if ! sudo grep -qF "$line" /etc/bash.bashrc; then
+    # Append the line to /etc/bash.bashrc
+    echo "$line" | sudo tee -a /etc/bash.bashrc
+fi
+
+# Reload the modified /etc/bash.bashrc
+source /etc/bash.bashrc
   fi
 fi

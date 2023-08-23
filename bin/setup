@@ -9,7 +9,7 @@ if [[ $(uname) == "Darwin" ]]; then
     echo "does-robot installed"
 fi
 
-# for wsl 
+# for wsl
 
 if [[ $(uname) == "Linux" ]]; then
   if [[ $WSL_DISTRO_NAME == *"Ubuntu"* ]]; then

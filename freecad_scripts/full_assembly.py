@@ -1,7 +1,6 @@
 import FreeCAD as App
 import Mesh
 import os
-import FreeCADGui as Gui
 
 doc = App.ActiveDocument
 parent_objects = [obj for obj in doc.Objects if obj.InList == []]

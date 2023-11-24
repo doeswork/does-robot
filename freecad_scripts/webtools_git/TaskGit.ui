@@ -54,7 +54,7 @@
               <item>
               <widget class="QPushButton" name="buttonCheckout">
                 <property name="text">
-                <string>Checkout</string>
+                <string>Checkout Branch</string>
                 </property>
               </widget>
               </item>

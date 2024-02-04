@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   greet-mark:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: Say hello to Mark
       run: echo "Hello Mark"

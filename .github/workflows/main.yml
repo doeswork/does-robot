@@ -1,12 +1,12 @@
-name: Run Python Script
+name: Update File with Current Time
 
 on: [push]
 
 jobs:
-  run-script:
-    runs-on: self-hosted # Ensure this matches your self-hosted runner's label
+  update-file:
+    runs-on: self-hosted # Make sure this matches your self-hosted runner's label
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-    - name: Run print.py script
-      run: python3 ~/print.py
+    - name: Update jawn.txt with current time
+      run: echo "$(date '+%Y-%m-%d %H:%M:%S')" > ~/jawn.txt

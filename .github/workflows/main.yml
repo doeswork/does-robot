@@ -9,4 +9,4 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     - name: Run print.py script
-      run: python ~/print.py
+      run: python3 ~/print.py

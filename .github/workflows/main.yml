@@ -1,10 +1,12 @@
-name: Hello Workflow
+name: Run Python Script
 
 on: [push]
 
 jobs:
-  greet-mark:
-    runs-on: self-hosted
+  run-script:
+    runs-on: self-hosted # Ensure this matches your self-hosted runner's label
     steps:
-    - name: Say hello to Mark
-      run: echo "Hello Mark"
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Run print.py script
+      run: python ~/print.py

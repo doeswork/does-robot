@@ -9,8 +9,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Update jawn.txt with changes in the current push
-        run: |
-          echo "Changes in push at $(date '+%Y-%m-%d %H:%M:%S'):" >> ~/jawn.txt
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} >> ~/jawn.txt
+        run: git diff --name-only ${{ github.event.before }} ${{ github.sha }} >> ~/jawn.txt
       - name: Update run stl.py
         run: echo `python3 ~/stl.py`

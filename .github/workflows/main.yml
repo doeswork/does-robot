@@ -23,7 +23,7 @@ jobs:
       #     # Add any dependencies your script might need
 
       - name: Run stl.py
-        run: python3 ~/stl.py
+        run: python3 stl.py
 
       - name: Print .FCStd Files
         run: |

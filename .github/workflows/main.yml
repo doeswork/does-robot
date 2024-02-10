@@ -11,4 +11,4 @@ jobs:
       - name: Update jawn.txt with current time
         run: echo "$(date '+%Y-%m-%d %H:%M:%S')" > ~/jawn.txt
       - name: Update run stl.py
-        run: echo python3 ~/stl.py
+        run: echo `python3 ~/stl.py`

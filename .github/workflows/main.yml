@@ -1,12 +1,32 @@
-name: Update File with Current Time
+name: Run STL Script on Push
 
-on: [push]
+on:
+  push:
+    paths:
+      - "**.FCStd"
 
 jobs:
-  update-file:
-    runs-on: self-hosted # Make sure this matches your self-hosted runner's label
+  build:
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Update jawn.txt with current time
-      run: echo "$(date '+%Y-%m-%d %H:%M:%S')" > ~/jawn.txt
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x" # Specify the Python version you need
+
+      # - name: Install Dependencies
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     # Add any dependencies your script might need
+
+      - name: Run stl.py
+        run: python3 ~/stl.py
+
+      - name: Print .FCStd Files
+        run: |
+          git diff --name-only ${{ github.sha }}^ ${{ github.sha }} | grep '\.FCStd$' | while read file; do
+            echo "File changed: $file"
+          done

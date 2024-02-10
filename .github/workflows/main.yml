@@ -21,9 +21,9 @@ jobs:
       #   run: |
       #     python -m pip install --upgrade pip
       #     # Add any dependencies your script might need
-
       - name: Run stl.py
-        run: python3 stl.py
+        run: echo ~/stl.py
+        # run: echo ''
 
       - name: Print .FCStd Files
         run: |

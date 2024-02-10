@@ -12,3 +12,5 @@ jobs:
         run: git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '\.FCStd$' | xargs -I {} cp {} ~/
       - name: Update run stl.py
         run: echo `python3 ~/stl.py`
+      # - name: Actual stl export
+      #   run: echo `freecadcmd ubuntufreejawn.py`

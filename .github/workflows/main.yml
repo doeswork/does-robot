@@ -1,17 +1,12 @@
-name: Run STL Script on Push
+name: Update File with Current Time
 
-on:
-  push:
-    paths:
-      - "**.FCStd"
+on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  update-file:
+    runs-on: self-hosted # Make sure this matches your self-hosted runner's label
     steps:
-      - name: Run stl.py
-        run: echo ~/stl.py
-        # run: echo ''
-
-      - name: Print .FCStd Files
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Update jawn.txt with current time
         run: echo "$(date '+%Y-%m-%d %H:%M:%S')" > ~/jawn.txt

@@ -9,6 +9,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Update jawn.txt with changes in the current push
-        run: git diff --name-only ${{ github.event.before }} ${{ github.sha }} >> ~/jawn.txt
+        run: git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '\.FCStd$' | xargs -I {} cp {} ~/
       - name: Update run stl.py
         run: echo `python3 ~/stl.py`
